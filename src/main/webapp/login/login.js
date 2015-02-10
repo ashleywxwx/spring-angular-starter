@@ -5,10 +5,11 @@ angular
         console.log("LoginCtrl created.");
 
         var vm = this;
+        vm.credentials = {};
         vm.login = login;
 
         function login() {
-            console.log("Login function called");
-        };
+            console.log("Login function called: " + JSON.stringify(vm.credentials));
+        }
 
     });
