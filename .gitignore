@@ -3,7 +3,7 @@ target/*
 
 #IntelliJ
 .idea/*
-demo.iml
+*.iml
 
 #bower
 src/main/webapp/bower_components/
