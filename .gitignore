@@ -1,0 +1,9 @@
+#Java
+target/*
+
+#IntelliJ
+.idea/*
+demo.iml
+
+#bower
+src/main/webapp/bower_components/

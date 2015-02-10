@@ -1,0 +1,12 @@
+{
+  "name": "boot-angular",
+  "authors": [
+    "Andrew Bell <andrew@recursivechaos.com>"
+  ],
+  "dependencies": {
+    "angular": "~1.3.11",
+    "bootstrap-ui": "~0.12.0",
+    "bootstrap-css-only": "~3.3.2",
+    "angular-route": "~1.3.11"
+  }
+}
