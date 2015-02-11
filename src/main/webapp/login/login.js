@@ -5,7 +5,10 @@ angular
         console.log("LoginCtrl created.");
 
         var vm = this;
-        vm.credentials = {};
+        vm.credentials = {
+            username: "",
+            password: ""
+        };
         vm.login = login;
 
         $scope.tab = function(route) {
@@ -32,13 +35,16 @@ angular
 
         authenticate();
 
-        //$scope.credentials = {};
         function login() {
-            $http.post('login', vm.credentials, {
+
+            var data2 = 'username=' + encodeURIComponent(vm.credentials.username) +
+                '&password=' + encodeURIComponent(vm.credentials.password);
+
+            $http.post('login', data2, {
                 headers : {
-                    "content-type" : "application/x-www-form-urlencoded"
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 }
-            }).success(function(data) {
+            }).success(function() {
                 authenticate(function() {
                     if ($rootScope.authenticated) {
                         console.log("Login succeeded");
@@ -52,7 +58,7 @@ angular
                         $rootScope.authenticated = false;
                     }
                 });
-            }).error(function(data) {
+            }).error(function() {
                 console.log("Login failed");
                 $location.path("/login");
                 $scope.error = true;
@@ -64,13 +70,10 @@ angular
             $http.post('logout', {}).success(function() {
                 $rootScope.authenticated = false;
                 $location.path("/");
-            }).error(function(data) {
+            }).error(function() {
                 console.log("Logout failed");
                 $rootScope.authenticated = false;
             });
         }
-
-
-
 
     }]);
