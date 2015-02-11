@@ -9,7 +9,7 @@ angular
             username: "",
             password: ""
         };
-        vm.login = login;
+        //vm.login = login;
 
         $scope.tab = function(route) {
             return $route.current && route === $route.current.controller;
@@ -35,7 +35,7 @@ angular
 
         authenticate();
 
-        function login() {
+        $scope.login = function() {
 
             var data2 = 'username=' + encodeURIComponent(vm.credentials.username) +
                 '&password=' + encodeURIComponent(vm.credentials.password);
@@ -64,7 +64,7 @@ angular
                 $scope.error = true;
                 $rootScope.authenticated = false;
             })
-        }
+        };
 
         $scope.logout = function() {
             $http.post('logout', {}).success(function() {

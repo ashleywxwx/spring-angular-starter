@@ -6,7 +6,7 @@ angular
             templateUrl : 'home/home.html',
             controller : 'HomeCtrl as homeCtrl'
         }).when('/login', {
-            templateUrl : 'login/login.html',
+            templateUrl : 'login.html',
             controller : 'LoginCtrl as loginCtrl'
         }).otherwise('/');
     });

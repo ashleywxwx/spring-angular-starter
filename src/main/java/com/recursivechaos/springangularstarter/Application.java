@@ -61,7 +61,7 @@ public class Application {
                 logout().
             and().
                 authorizeRequests().
-                antMatchers("/index.html", "/home/**", "/login/**", "/bower_components/**", "/", "/main.js", "/login/", "/navigation/**","/login","login/").
+                antMatchers("/index.html", "/home/**", "/login/**", "/bower_components/**", "/", "/main.js", "/login/", "/navigation/**","/login","login/","/login.html").
                 permitAll().
                 anyRequest().
                 authenticated().
