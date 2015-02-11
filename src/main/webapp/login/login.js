@@ -20,8 +20,10 @@ angular
             $http.get('user').success(function(data) {
                 console.log("/user success: " + JSON.stringify(data));
                 if (data.name) {
+                    console.log("And Authenticated!");
                     $rootScope.authenticated = true;
                 } else {
+                    console.log("But received invalid data.");
                     $rootScope.authenticated = false;
                 }
                 callback && callback();
